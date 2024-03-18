@@ -1,0 +1,25 @@
+folder str.
+views  ko src mai nhi jaytega bcoz ye parent mai doond ta hai
+controller
+routes
+model  ye nhi jayega src mai  prisma use hooga
+middleware    req ke uppar chalana hotta hai jo function
+utils    jis func ko reuse 
+////////////
+
+dev dependency ye only devlopment ke liye chahiye....
+
+
+roadmap   user -> tweet
+
+
+
+model {
+user mai id firstname lastname email@unique password  username}
+
+tweet model  {id user title content}
+
+
+get tweet with id
+
+

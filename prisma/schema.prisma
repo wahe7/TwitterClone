@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://wahegurusingh2002:Uuk7hE5vtWmx@ep-weathered-glade-a521thnt.us-east-2.aws.neon.tech/prisma26?sslmode=require"
+}
+
+
+model User{
+  id Int @id @default(autoincrement())
+  firstname String
+  lastname String
+  username String @unique
+  email String @unique
+  password String
+  tweet Tweet[]
+
+}
+model Tweet{
+  id Int @id @default(autoincrement())
+  title String
+  content String
+  userid Int
+  user User @relation(fields: [userid],references: [id])  // table join using id
+}
+
+model like{
+  id Int @id @default(autoincrement())
+  tweetid Int
+  userid Int
+  
+
+}
+
+// npx prisma migrate dev --name "User model created"
+// npx prisma generate
+
+
+// import { PrismaClient } from '@prisma/client'
+// const prisma = new PrismaClient()
